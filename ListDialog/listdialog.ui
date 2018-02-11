@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ListDialog</class>
+ <widget class="QDialog" name="ListDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>330</width>
+    <height>266</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Phone Book</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QListWidget" name="list"/>
+   </item>
+   <item row="0" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="addButton">
+       <property name="text">
+        <string>Add new</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="editButton">
+       <property name="text">
+        <string>Edit</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="deleteButton">
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="canceAllButton">
+       <property name="text">
+        <string>Clear all</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>canceAllButton</sender>
+   <signal>clicked()</signal>
+   <receiver>list</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>291</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>226</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

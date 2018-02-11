@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Progress</class>
+ <widget class="QDialog" name="Progress">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>516</width>
+    <height>309</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Progress</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Progress:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSlider" name="horizontalSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>GroupBox</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Default:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QProgressBar" name="progressBar">
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Custom Text:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QProgressBar" name="progressBar_2">
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="format">
+         <string>%v out of %m steps completed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Hidden Text:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QProgressBar" name="progressBar_3">
+        <property name="value">
+         <number>47</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Infinite Range:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QProgressBar" name="progressBar_4">
+        <property name="maximum">
+         <number>0</number>
+        </property>
+        <property name="value">
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>progressBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>161</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>progressBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>progressBar_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Progress</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>458</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>progressBar</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>365</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>progressBar_2</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
